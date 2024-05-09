@@ -1,19 +1,19 @@
-# Hosting a static website using Amazon S3 buckets and CloudFront
+# Hosting a static website using AWS S3 bucket and CloudFront
 
 ## Overview 
-Create a static website and host it on S3 bucket(private bucket) but with public read policy assigned, using cloudFront for CDN.
+Create a static website and host it on an S3 bucket(private bucket) but with a public read policy assigned, using CloudFront for CDN.
 
 ## Introduction
 
 * Amazon CloudFront
 
-CloudFront is Amazon Web Services' (AWS) content delivery network (CDN) service. Its primary function is to accelerate the delivery of web content (such as web pages, images, videos, and other assets) to users around the world with low latency and high data transfer speeds. It provides global scalability for web applications and static websites hosted on AWS or other origins. It plays a crucial role in optimizing the performance and reliability of web applications and reducing the operational overhead associated with serving content to a global audience.
+CloudFront is Amazon Web Services (AWS) content delivery network (CDN) service. Its primary function is to accelerate the delivery of web content (such as web pages, images, videos, and other assets) to users worldwide with low latency and high data transfer speeds. It provides global scalability for web applications and static websites hosted on AWS or other origins. It plays a crucial role in optimizing the performance and reliability of web applications and reducing the operational overhead associated with serving content to a global audience.
 
 * Static Website
 
-A static website consists of only client-side technologies such as HTML, CSS, and JavaScript. It doesn't require a server to dynamically generate or serve content.
+A static website consists of only client-side technologies such as HTML, CSS, and JavaScript. It doesn't require a server to generate or serve content dynamically.
 
- Utilizing CloudFront as a CDN for this static website improves the performance and reliability of the website by caching content at edge locations worldwide, reducing latency for users across the globe.
+Utilizing CloudFront as a CDN for this static website improves the performance and reliability of the website by caching content at edge locations worldwide, reducing latency for users across the globe.
 
 ### To achieve the overview of this task, I used the following steps below:
 
@@ -31,7 +31,7 @@ A static website consists of only client-side technologies such as HTML, CSS, an
 
 2. Upload files and folders to my S3 bucket
 
-   For the purpose of this assignment, I used this template [here](https://startbootstrap.com/theme/agency)
+   For this assignment, I used this template [here](https://startbootstrap.com/theme/agency)
    
    I downloaded the template and unzipped it then uploaded it to my S3 bucket.
     
@@ -41,7 +41,7 @@ A static website consists of only client-side technologies such as HTML, CSS, an
 
 3. Set appropriate permissions 
 
-   I unchecked the "block public access" in order to make the files accessible.
+   I unchecked the "block public access" to make the files accessible.
 
    ![Uncheck Public Access](/Images/Image8.png)
 
@@ -69,7 +69,7 @@ A static website consists of only client-side technologies such as HTML, CSS, an
   ![Bucket Policy](/Images/Image10.png)
 
 
-   I then enabled static website hosting from the so the website can serve the statis files in my bucket.
+   I then enabled static website hosting so the website can serve the static files in my bucket.
 
    ![Enable Static Website Hosting](/Images/Image9.png)
    
@@ -79,7 +79,7 @@ A static website consists of only client-side technologies such as HTML, CSS, an
 
    ![CloudFront Service](/Images/Image11.png)
 
-   Created a distribution with the origin name as `florenceokoli-test.s3.us-east-1.amazonaws.com` with WAF disabled since it is just for testing purposes.
+   I created a distribution with the origin name `florenceokoli-test.s3.us-east-1.amazonaws.com` with WAF disabled since it is just for testing purposes.
 
    ![Distribution Origin Name](/Images/Image12.png)
 
@@ -89,7 +89,7 @@ A static website consists of only client-side technologies such as HTML, CSS, an
    Next, I saved the changes made and distribution was deployed.
 
    ![Distribution Deployed](/Images/Image14.png)
-   As soon as the deployement was completed and the status read enabled, I used the CloudFront domain name `d2o4s4asa3qxqp.cloudfront.net` to access the static website.
+   After the deployment was completed and the status read enabled, I used the CloudFront domain name `d2o4s4asa3qxqp.cloudfront.net` to access the static website.
 
    ![Website Hosted with CloudFront](/Images/Image15.png)
 
