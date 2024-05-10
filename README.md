@@ -1,9 +1,13 @@
 # Hosting a static website using AWS S3 bucket and CloudFront
 
 ## Overview 
-Create a static website and host it on an S3 bucket(private bucket) but with a public read policy assigned, using CloudFront for CDN.
+Create a static website and host it on an S3 bucket but with a public read policy assigned, using CloudFront for CDN.
 
 ## Introduction
+
+* Amazon S3
+
+An Amazon S3 (Simple Storage Service) bucket is a fundamental component of Amazon Web Services (AWS) that provides scalable object storage in the cloud. An Amazon S3 (Simple Storage Service) bucket serves as a fundamental storage container within the S3 service. 
 
 * Amazon CloudFront
 
@@ -11,7 +15,7 @@ CloudFront is Amazon Web Services (AWS) content delivery network (CDN) service. 
 
 * Static Website
 
-A static website consists of only client-side technologies such as HTML, CSS, and JavaScript. It doesn't require a server to generate or serve content dynamically.
+A static website is a lightweight, fast-loading, and easy-to-maintain type of website that presents fixed content to users using basic web technologies. It is an ideal choice for projects where simplicity, speed, and low maintenance overhead are prioritized over dynamic, database-driven functionality. A static website consists of only client-side technologies such as HTML, CSS, and JavaScript. It doesn't require a server to generate or serve content dynamically.
 
 Utilizing CloudFront as a CDN for this static website improves the performance and reliability of the website by caching content at edge locations worldwide, reducing latency for users across the globe.
 
